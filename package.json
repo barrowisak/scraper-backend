@@ -9,6 +9,6 @@
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.19.2",
-    "chromium": "^3.0.0"
+    "playwright": "^1.42.1"
   }
 }
