@@ -3,21 +3,21 @@ const cors = require('cors');
 const runScraper = require('./apoteket');
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const port = process.env.PORT; // 🔥 Render tilldelar detta
 
-// Middleware
 app.use(cors());
 
-// Endpoint för att köra apoteket-scraper
 app.get('/run/apoteket', async (req, res) => {
   try {
-    console.log("🔁 Förfrågan mottagen, startar scraping...");
     const data = await runScraper();
     res.json(data);
   } catch (err) {
-    console.error("❌ Fel vid scraping:", err);
-    res.status(500).json({ error: err.message });
+    res.status(500).send({ error: err.message });
   }
+});
+
+app.listen(port, () => {
+  console.log(`✅ Servern är igång på port ${port}`);
 });
 
 // Starta servern
