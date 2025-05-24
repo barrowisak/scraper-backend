@@ -3,7 +3,7 @@ const cors = require('cors');
 const runScraper = require('./apoteket');
 
 const app = express();
-const port = process.env.PORT; // 🔥 Render tilldelar detta
+const port = process.env.PORT; // Render tilldelar detta automatiskt
 
 app.use(cors());
 
@@ -18,9 +18,4 @@ app.get('/run/apoteket', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`✅ Servern är igång på port ${port}`);
-});
-
-// Starta servern
-app.listen(PORT, () => {
-  console.log(`🚀 Servern är igång på port ${PORT}`);
 });
