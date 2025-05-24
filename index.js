@@ -3,7 +3,7 @@ const cors = require('cors');
 const runScraper = require('./apoteket');
 
 const app = express();
-const port = process.env.PORT; // Render tilldelar detta automatiskt
+const port = process.env.PORT; // ✅ Render sätter denna själv
 
 app.use(cors());
 
